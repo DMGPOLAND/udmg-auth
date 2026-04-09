@@ -1,0 +1,33 @@
+name = "udmg-auth"
+main = "src/index.ts"
+compatibility_date = "2026-02-22"
+
+workers_dev = true
+preview_urls = true
+
+routes = [
+  { pattern = "auth.udmg.pl/*", zone_name = "udmg.pl" }
+]
+
+[vars]
+ALLOWED_ORIGINS = "https://udmg.pl,https://www.udmg.pl,https://dev.rolek.me"
+COOKIE_NAME = "udmg_auth_session"
+STEAM_REALM = "https://auth.udmg.pl"
+STEAM_RETURN_TO = "https://auth.udmg.pl/auth/steam/callback"
+
+TWITCH_BROADCASTER_ID = "69189731"
+TWITCH_SCOPES = "user:read:email channel:read:subscriptions"
+
+KICK_SCOPES = "user:read"
+KICK_BROADCASTER_SLUG = "dmgpoland"
+KICK_BROADCASTER_USER_ID = "17427779"
+
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5zbGl6dHZ6dnZndWxidmpqdGZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzNDk3MDAsImV4cCI6MjA4MzkyNTcwMH0.XUc-_Vnuw3wHfzNhgWrZL36cIkemsTv1-BCpZYutD3A" 
+
+
+[[kv_namespaces]]
+binding = "AUTH_KV"
+id = "364c94b811fd432dba878510372fa875"
+
+[triggers]
+crons = ["* * * * *"]
